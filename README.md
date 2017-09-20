@@ -7,7 +7,7 @@ Repository créer pour la version 1 du projet Chablex
 
 <h1>Documentation</h1>
 <h2>Documentation développeur</h2>
-[Lien vers la documentation développeur](docs/docDevloppeurs.md)
+[Lien vers la documentation développeur](Documentation/docDevloppeurs.md)
 
 Contient :
 
@@ -16,5 +16,5 @@ Contient :
 - Améliorations possibles 
 
 <h2>Documentation utlisateur</h2>
-[Lien vers la documentation utilisateur](docs/docUtilisateurs.md)
+[Lien vers la documentation utilisateur](Documentation/docUtilisateurs.md)
 
