@@ -1,5 +1,5 @@
 # Chablex
-Repository créer pour la version 1 du projet Chablex
+*Repository* créé pour la toute première version du projet Chablex
 
 
 
@@ -11,8 +11,8 @@ Lien vers le manuel développeur : https://github.com/jimy74/Chablex/blob/master
 
 Contient :
 
-- Le guide de mise en route de Embark pour simuler la démo du prjet Chablex
-- L'explication détaillées du fonctionnement des smart contracts utilisé
+- Le guide de mise en route de Embark pour simuler la démo du projet Chablex
+- L'explication détaillée du fonctionnement des smart contracts utilisés
 - Améliorations possibles 
 
 <h2>Manuel utlisateur</h2>
