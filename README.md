@@ -9,7 +9,7 @@
 <h2>Manuel développeur</h2>
 Lien vers le manuel développeur : https://github.com/jimy74/Chablex/blob/master/Documentation/docDeveloppeurs.md
 
-Contient :
+Vous y retrouverez :
 
 - Le guide de mise en route de Embark pour simuler la démo du projet Chablex
 - L'explication détaillée du fonctionnement des smart contracts utilisés
