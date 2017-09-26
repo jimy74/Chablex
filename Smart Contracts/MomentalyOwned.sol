@@ -21,7 +21,7 @@ contract MomentalyOwned is StandardToken {
 
     uint public creationTime; //Not a constant because "now" should not be initialize in compile-time
 
-    uint public constant periodQ1 = 3 minutes; //90 days;
+    uint public constant periodQ1 = 90 days;
 
     function MomentalyOwned() {
         owner = msg.sender;
