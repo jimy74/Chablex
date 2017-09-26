@@ -8,20 +8,7 @@ pragma solidity ^0.4.11;
    A part of the inital code became usless and been deleted
 */
 
-
-
-
-
 import './CongressOwned.sol';
-
-
-
-/**
- * @title Mintable token
- * @dev Simple ERC20 Token example, with mintable token creation
- * @dev Issue: * https://github.com/OpenZeppelin/zeppelin-solidity/issues/120
- * Based on code by TokenMarketNet: https://github.com/TokenMarketNet/ico/blob/master/contracts/MintableToken.sol
- */
 
 contract MintableToken is CongressOwned {
 
@@ -39,5 +26,4 @@ contract MintableToken is CongressOwned {
     Mint(_to, _amount);
     Transfer(0x0, _to, _amount); // Detail : 0x0 Because we create new tokens in the minting process (there is no sender of the transfer in term of loss)
   }
-
 }
