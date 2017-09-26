@@ -1,6 +1,6 @@
 pragma solidity ^0.4.11;
 
-//  Initialy from :  https://github.com/OpenZeppelin
+//  Initially from :  https://github.com/OpenZeppelin
 
 import './SafeMath.sol';
 
