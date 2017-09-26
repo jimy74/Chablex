@@ -17,10 +17,10 @@ import './MomentalyOwned.sol';
 contract CongressOwned is MomentalyOwned {
 
 		/* constants, variables and events */
-		uint256 public constant  minimumQuorum = 3; //10; // Minimum acceptation + rejection
-		uint256 public constant debatingPeriod = 3 minutes; //7 days; //minimal delay to close a votation
+		uint256 public constant  minimumQuorum = 3; // Minimum acceptation + rejection
+		uint256 public constant debatingPeriod = 7 days; //minimal delay to close a votation
 		uint256 public constant majorityMinPourcent = 67;
-		uint256 public constant periodEnterProposal = 3 minutes; //7 days; //minimal delay enter 2 proposals from the same sender
+		uint256 public constant periodEnterProposal = 7 days; //minimal delay enter 2 proposals from the same sender
 
 		Proposal[] public proposals;
 		uint256 public numProposals;
