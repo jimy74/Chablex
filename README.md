@@ -7,7 +7,7 @@
 
 <h1>Documentation</h1>
 <h2>Manuel développeur</h2>
-Lien vers le manuel développeur : https://github.com/jimy74/Chablex/blob/master/Documentation/docDeveloppeurs.md
+Lien vers le manuel développeur : https://github.com/jimy74/Chablex/blob/master/Documentation/manuelD%C3%A9veloppeur.pdf
 
 Vous y retrouverez :
 
@@ -16,5 +16,5 @@ Vous y retrouverez :
 - Améliorations possibles 
 
 <h2>Manuel utlisateur</h2>
-Lien vers le manuel utilisateur : https://github.com/jimy74/Chablex/blob/master/Documentation/docUtilisateurs.md
+Lien vers le manuel utilisateur : https://github.com/jimy74/Chablex/blob/master/Documentation/manuelUtilisateur.pdf
 
