@@ -1,4 +1,4 @@
-#<h1>Projet Chablex</h1>
+<h1>Projet Chablex</h1>
 *Repository* créé pour la toute première version du projet Chablex
 
 <h2>Description du projet</h2>
