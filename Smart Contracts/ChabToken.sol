@@ -1,40 +1,38 @@
 pragma solidity ^0.4.11;
 
-/* Auteur  :    Jimmy Paris
+/* Auteur : Jimmy Paris
 
    Versions pré GitHub :
-        10.09.2017 (Ajout d'une limite du total des demandes en cours fixée à 1/3 du totalSupply)
-				04.09.2017 (Ajout d'une durée minimum entre les augmentations du maxEmpruntable)
-					P5 : [corrigé]
-					Il risque d'emprunter dans le but de re-prêter directement et cela afin de très vite augmenter son maximum empruntable
-
-				30.08.2017 (Prêter dans l'ordre des demandes FIFO)
-				problèmes historiques :
-						-P4 : [corrigé]
-						      doit gérer la possibilité de prêter une partie seulement de la plus vieille demande en cours
-							  actuelement, le prêt doit au moins être égale à la demande la plus vieille,
-							  ce qui discrimine les petits prêteurs, mais aussi risque de retarder les gros prêteurs et voir même de bloquer le système dans le cas ou aucun prêteur ne peut prêter une telle somme!
-							  pose aussi problème si l'on prête par exemple 6$ à A demandant 4$ et B demandant 3$
-
-							  -> [solution possible mais abandonnée] :
-							      faire le prêt que si on a au moins de quoi traiter la première demande
-								  exemple : require(_value >= demandesEnCours.copyPopRequest().valeur); // Risque de bloquer le système
-
-							  -> [solution retenue] :
-								  permettre les prêts partiels et de répondre à un gros emprunt même si un seul participant ne possède pas à lui seul la somme nécessaire.
-
-						-P3 : [corrigé]
-							  doit gérer le fait qu'il y ait assez dans la pile (fait par une simple vérification dans peutPreter)
-
-
-				29.08.2017 (Preter à qui on veut, sans la pile)
+        		10.09.2017 (Ajout d'une limite du total des demandes en cours fixée à 1/3 du totalSupply)
+				PB6 : garantir que les demandes peuvent circulée et ne ce bloquent pas,
+				      il ne faut que le total des demandes puisse demander une trop grande partie des tokens
+			04.09.2017 (Ajout d'une durée minimum entre les augmentations du maxEmpruntable)
+				P5 : [corrigé]
+				Il risque d'emprunter dans le but de re-prêter directement et cela afin de très vite augmenter son maximum empruntable
+			30.08.2017 (Prêter dans l'ordre des demandes FIFO)
+			problèmes historiques :
+					-P4 : [corrigé]
+					  doit gérer la possibilité de prêter une partie seulement de la plus vieille demande en cours
+					  actuelement, le prêt doit au moins être égale à la demande la plus vieille,
+					  ce qui discrimine les petits prêteurs, mais aussi risque de retarder les gros prêteurs et voir même de bloquer le système,
+					  dans le cas ou aucun prêteur ne peut prêter une telle somme!
+					  pose aussi problème si l'on prête par exemple 6$ à A demandant 4$ et B demandant 3$
+					  -> [solution possible mais abandonnée] :
+					     faire le prêt que si on a au moins de quoi traiter la première demande
+					     exemple : require(_value >= demandesEnCours.copyPopRequest().valeur); // Risque de bloquer le système
+					  -> [solution retenue] :
+					     permettre les prêts partiels et de répondre à un gros emprunt même si un seul participant ne possède pas à lui seul la somme nécessaire.
+					-P3 : [corrigé]
+					  doit gérer le fait qu'il y ait assez dans la pile (fait par une simple vérification dans peutPreter)
+			29.08.2017 (Preter à qui on veut, sans la pile)
 				problèmes historiques :
 
-						-P2 : si on laisse les membres choisir à qui ils veulent prêter, certains prêts seront peut être oubliés, igniorés ou jamais traités.
-							  -> dans le cas ou les membres ne sont pas controlées et n'importe qui peut participer, ceci n'est pas un problème mais plutôt une solution d'auto-régulation et de marché de la confiance
-							  -> mais dans le cas ou on a fait un vote pour admettre nos membres (comme ici) et qu'on ne veut pas de favoritisme dans la vitesse à laquelle on peut profiter d'un prêt, sachant que chacun possède déjà un maximum empruntable
-						-P1 : [corrigé]
-						      doit auditer les emprunts et les remboursements pour définir un maximum empruntable
+					-P2 : [corrigé]
+					  si on laisse les membres choisir à qui ils veulent prêter, certains prêts seront peut être oubliés, igniorés ou jamais traités.
+					  -> dans le cas ou les membres ne sont pas controlées et n'importe qui peut participer, ceci n'est pas un problème mais plutôt une solution d'auto-régulation et de marché de la confiance
+					  -> mais dans le cas ou on a fait un vote pour admettre nos membres (comme ici) et qu'on ne veut pas de favoritisme dans la vitesse à laquelle on peut profiter d'un prêt, sachant que chacun possède déjà un maximum empruntable
+					-P1 : [corrigé]
+					  doit auditer les emprunts et les remboursements pour définir un maximum empruntable
 */
 
 import './MintableToken.sol';
