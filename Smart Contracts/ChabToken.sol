@@ -2,7 +2,7 @@ pragma solidity ^0.4.11;
 
 /* Auteur  :    Jimmy Paris
 
-   Versions :
+   Versions pré GitHub :
         10.09.2017 (Ajout d'une limite du total des demandes en cours fixée à 1/3 du totalSupply)
 				04.09.2017 (Ajout d'une durée minimum entre les augmentations du maxEmpruntable)
 					P5 : [corrigé]
