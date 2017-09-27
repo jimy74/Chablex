@@ -59,7 +59,7 @@ contract ChabToken is MintableToken {
 
   mapping (address => uint256) public demandes;   // Demandes d'emprunts (total)
   mapping (address => uint256) public emprunts;   // Emprunts passés (total)
-  mapping (address => uint256) public remboursements;   // Remboursemments ou prêts passés (total)
+  mapping (address => uint256) public remboursements;   // Remboursements ou prêts passés (total)
   mapping (address => uint256) private maxEmpruntable;   // Maximum empruntable
 	mapping (address => uint256) public dateChangementMax; // Date du dernier changement du Max empruntable
 
