@@ -21,7 +21,7 @@ contract QueueDemande
     }
 
 
-    /// @dev the number of elements stored in the queue.
+    /// @dev the number of elements stored in the queue
     function length(Queue storage q) constant internal returns (uint256) {
         return q.back - q.front;
     }
