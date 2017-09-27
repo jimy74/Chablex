@@ -36,7 +36,7 @@ pragma solidity ^0.4.11;
 */
 
 import './MintableToken.sol';
-import './QueueDemandes.sol';
+import './QueueDemande.sol';
 
 contract ChabToken is MintableToken {
 
