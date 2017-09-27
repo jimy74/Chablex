@@ -82,7 +82,7 @@ contract ChabToken is MintableToken {
 
 		    require(_value >= 1); // La valeur demandée est au moins 1 token
 
-		      uint monMaxEmpruntable = getMaxEmpruntable(msg.sender);   // Définir le maximum emruntable ou sa valeur initiale
+		      uint monMaxEmpruntable = getMaxEmpruntable(msg.sender);   // Définir le maximum empruntable ou sa valeur initiale
 
         require(_value <= monMaxEmpruntable);   // N'emprunte pas plus de tokens que le max
 
