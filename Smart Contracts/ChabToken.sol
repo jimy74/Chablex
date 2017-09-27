@@ -89,7 +89,7 @@ contract ChabToken is MintableToken {
 
         require(demandes[msg.sender].add(_value) <= remboursements[msg.sender].add(monMaxEmpruntable));   // Le total des demandes + la demande ne dépasse pas le total des remboursements + le max
 
-        require( (_value + demandesEnCours.getTotalValue()) * minRatioCirculent < totalSupply); // Le total demandé ne dépassera pas 1/ratio du nombre de tokens total
+        require( (_value + demandesEnCours.getTotalValue()) * minRatioCirculent < totalSupply); // Le total demandé est inférieur à 1/ratio du nombre de tokens total
 
 		_; // Indique où insérer le code de la fonction appelante
     }
