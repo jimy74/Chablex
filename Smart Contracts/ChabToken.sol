@@ -50,9 +50,10 @@ contract ChabToken is MintableToken {
   string public constant name = "ChabToken";
   uint8 public constant decimals = 18;
 
-	uint256 public constant initialEmpruntable = 500;   //  Utiliser comme maxEmpruntable lors de la première demande de prêt
-	uint256 public constant facteurChangeMax = 2;   // Utiliser pour multiplier le max actuel et définir le nouveau max
+  uint256 public constant initialEmpruntable = 500;   //  Utiliser comme maxEmpruntable lors de la première demande de prêt
+  uint256 public constant facteurChangeMax = 2;   // Utiliser pour multiplier le max actuel et définir le nouveau max
   uint256 public constant tempsMinChangeMax = 30 days; //temps obligatoire entre les changements du maxEpruntable
+  uint256 public constant minRatioCirculent = 3; // Fixe le maximum total des demandes en cours à 1 / ratio
 
 
   QueueDemandesEnCours demandesEnCours = new QueueDemandesEnCours();
@@ -61,7 +62,7 @@ contract ChabToken is MintableToken {
   mapping (address => uint256) public emprunts;   // Emprunts passés (total)
   mapping (address => uint256) public remboursements;   // Remboursements ou prêts passés (total)
   mapping (address => uint256) private maxEmpruntable;   // Maximum empruntable
-	mapping (address => uint256) public dateChangementMax; // Date du dernier changement du Max empruntable
+  mapping (address => uint256) public dateChangementMax; // Date du dernier changement du Max empruntable
 
     function getMaxEmpruntable(address addr) constant returns (uint){
 				if (memberId[addr] == 0) // si ce n'est pas un membre
@@ -88,7 +89,7 @@ contract ChabToken is MintableToken {
 
         require(demandes[msg.sender].add(_value) <= remboursements[msg.sender].add(monMaxEmpruntable));   // Le total des demandes + la demande ne dépasse pas le total des remboursements + le max
 
-        require( (_value + demandesEnCours.getTotalValue()) * 3 < totalSupply); // Le total demandé ne dépassera pas 1/3 du nombre de tokens total
+        require( (_value + demandesEnCours.getTotalValue()) * minRatioCirculent < totalSupply); // Le total demandé ne dépassera pas 1/ratio du nombre de tokens total
 
 		_; // Indique où insérer le code de la fonction appelante
     }
