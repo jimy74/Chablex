@@ -24,7 +24,7 @@ Ce manuel ce compose de :
 
 - Le guide de mise en route de Embark pour simuler la démo du projet Chablex
 - L'explication détaillée du fonctionnement des smart contracts utilisés
-- Améliorations possibles 
+- Les améliorations possibles 
 
 <h3>3.2. Manuel utlisateur</h3>
 
