@@ -116,7 +116,7 @@ contract ChabToken is MintableToken {
     }
 
     // La fonction suivante est utilisée pour faire un prêt à la communauté,
-    // cela sera comptabilisé comme un remboursemment de n'importe lequel de vos prêt et augmentera votre maxEmpruntable.
+    // cela sera comptabilisé comme un remboursement de n'importe lequel de vos prêt et augmentera votre maxEmpruntable.
 
     function preter(uint256 _value) public onlyAfterQ1 onlyMembers(msg.sender) peutPreter(_value){
 
