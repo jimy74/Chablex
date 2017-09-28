@@ -20,10 +20,10 @@ https://github.com/jimy74/Chablex/tree/master/Smart%20Contracts
 Lien vers le manuel développeur : 
 https://github.com/jimy74/Chablex/blob/master/Documentation/manuelD%C3%A9veloppeur.pdf
 
-Ce manuel ce compose de :
+Ce manuel contient :
 
-- Le guide de mise en route de Embark pour simuler la démo du projet Chablex
-- L'explication détaillée du fonctionnement des smart contracts utilisés
+- Le guide de mise en route d'Embark pour simuler le projet Chablex
+- L'explication détaillée du fonctionnement des Smart Contracts utilisés
 - Les améliorations possibles 
 
 <h3>3.2. Manuel utlisateur</h3>
