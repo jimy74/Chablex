@@ -1,7 +1,7 @@
 <h1>Projet Chablex</h1>
 
 Le projet est de développer une crypto-monnaie locale "business to business" (B2B) permettant d'accélérer les échanges, mais aussi de faire des emprunts B2B à un taux de 0%.
-M. Priftis Athanasios m'a proposé de réaliser une première version de ce projet, qui est, dans le cadre de ce travail de bachelor, une opportunité de, concrètement, réaliser des Smart Contracts et une application associée.
+Priftis Athanasios m'a proposé de réaliser une première version de ce projet, qui est, dans le cadre de ce travail de bachelor, une opportunité de, concrètement, réaliser des Smart Contracts et une application associée.
 
 <h2>1. Travail de recherche</h2>
 
