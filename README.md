@@ -6,7 +6,7 @@ Priftis Athanasios m'a proposé de réaliser une première version de ce projet,
 <h2>1. Travail de recherche</h2>
 
 Lien vers le travail de recherche :
-https://github.com/jimy74/Chablex/blob/master/Documentation/travailRecherche.pdf
+https://github.com/jimy74/Chablex/blob/master/Documentation/travailBachelorJimmyParis.pdf
 
 <h2>2. Smart Contracts</h2>
 
