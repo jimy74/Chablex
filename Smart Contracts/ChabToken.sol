@@ -65,7 +65,7 @@ contract ChabToken is MintableToken {
   mapping (address => uint256) public dateChangementMax; // Date du dernier changement du Max empruntable
 
     function getMaxEmpruntable(address addr) constant returns (uint){
-				if (memberId[addr] == 0) // si ce n'est pas un membre
+	if (memberId[addr] == 0) // si ce n'est pas un membre
 					return 0;
         return initialEmpruntable >= maxEmpruntable[addr] ? initialEmpruntable : maxEmpruntable[addr];
     }
@@ -81,9 +81,9 @@ contract ChabToken is MintableToken {
 
     modifier peutDemander(uint256 _value) {
 
-		    require(_value >= 1); // La valeur demandée est au moins 1 token
+	require(_value >= 1); // La valeur demandée est au moins 1 token
 
-		      uint monMaxEmpruntable = getMaxEmpruntable(msg.sender);   // Définir le maximum empruntable ou sa valeur initiale
+	uint monMaxEmpruntable = getMaxEmpruntable(msg.sender);   // Définir le maximum empruntable ou sa valeur initiale
 
         require(_value <= monMaxEmpruntable);   // N'emprunte pas plus de tokens que le max
 
@@ -91,14 +91,14 @@ contract ChabToken is MintableToken {
 
         require( (_value + demandesEnCours.getTotalValue()) * minRatioCirculent < totalSupply); // Le total demandé est inférieur à 1/ratio du nombre de tokens total
 
-		_; // Indique où insérer le code de la fonction appelante
+	_; // Indique où insérer le code de la fonction appelante
     }
 
     function demander(uint256 _value) public onlyAfterQ1 onlyMembers(msg.sender) peutDemander(_value) {
 
         demandes[msg.sender] = demandes[msg.sender].add(_value); // Augmente le total demandé
 
-				demandesEnCours.addRequest(msg.sender, _value); // Ajoute la demande à la file d'attente
+	demandesEnCours.addRequest(msg.sender, _value); // Ajoute la demande à la file d'attente
 
         Demander(msg.sender, _value);
     }
@@ -108,10 +108,10 @@ contract ChabToken is MintableToken {
 
         require(_value > 0); // La valeur prêtée est supérieure à 0 token
 
-				require(balances[msg.sender] >= _value); // Le prêteur possède suffisamment
+	require(balances[msg.sender] >= _value); // Le prêteur possède suffisamment
 
         // La valeur du prêt ne dépasse pas le total des demandes en cours, et les demandes complétées n'appartiennent pas au prêteur
-				require(demandesEnCours.containMinValueFromOther(_value, msg.sender));
+	require(demandesEnCours.containMinValueFromOther(_value, msg.sender));
 
         _;
     }
